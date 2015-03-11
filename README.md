@@ -16,7 +16,7 @@ meteor add hybrid:asset-builder
 
 ### Platform Icons Supported
 * [ ] Web App
-* [ ] iOS
+* [x] iOS
 * [ ] Android
 * [ ] Mac OS X
 * [ ] Windows Phone
@@ -24,3 +24,20 @@ meteor add hybrid:asset-builder
 * [ ] Chrome Extension
 * [ ] Chrome App
 
+### Assets Config
+Make a new file in your Meteor app directory called `config.assets`
+
+Example Assets Config
+```json
+{
+    "appIcons": {
+        "source": "private/icon.png",
+        "output": "resources",
+        "type": ["web-app", "ios", "android", "chrome-extension", "mac"]
+    }
+}
+```
+
+### TODO
+* [ ] Allow for custom types / resizes
+* [ ] Finish platform sizes
