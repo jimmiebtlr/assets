@@ -99,7 +99,7 @@ The source image for icon types should be a 1024x1024 `png` file. ([Example Sour
 iOS generated icons from example
 ![iosoutput](http://i.imgur.com/gPGb4p7.png)
 
-### Favicon Inclusion
+### Favicons
 If using the `favicon` type, include the assets in your `<head>`
 ```html
 <!-- Standard Favicon -->
