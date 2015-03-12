@@ -150,4 +150,4 @@ App.icons({
 ```
 
 ### Retina Images
-If generating retina images you may want to look into [retina.js](http://imulus.github.io/retinajs/) or use [pixel ratio media queries](https://css-tricks.com/snippets/css/retina-display-media-query/)
+If generating retina images you may want to look into [retina.js](http://imulus.github.io/retinajs/) or use [css pixel ratio media queries](https://css-tricks.com/snippets/css/retina-display-media-query/).
