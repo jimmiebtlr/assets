@@ -94,62 +94,62 @@ types.ios = {
 
 
 var resizeIcons = function (compileStep) {
-  var config = JSON.parse(compileStep.read().toString('utf8'));
+	var config = JSON.parse(compileStep.read().toString('utf8'));
 
-  _.each(config, function (options, name) {
-  	var options = _.extend({
-  		output: "resources"
-  	}, options), type, source;
+	_.each(config, function (options, name) {
+		var options = _.extend({
+			output: "resources"
+		}, options), type, source;
 
-  	// Type
-  	if (typeof options.type === 'undefined') {
-	  	compileStep.error({message: "Asset builder: No type provided for " + name});
-	  }
-  	type = options.type;
+		// Type
+		if (typeof options.type === 'undefined') {
+			compileStep.error({message: "Asset builder: No type provided for " + name});
+		}
+		type = options.type;
 
-  	// Source
-  	if (typeof options.source === 'undefined') {
-	  	compileStep.error({message: "Asset builder: No source provided for " + name});
-	  }
-  	source = options.source;
+		// Source
+		if (typeof options.source === 'undefined') {
+			compileStep.error({message: "Asset builder: No source provided for " + name});
+		}
+		source = options.source;
 
-  	// Output
-  	output = options.output;
+		// Output
+		output = options.output;
 
-  	_.each(type, function (type) {
-  		var images = types[type];
+		_.each(type, function (type) {
+			var images = types[type];
 
-  		if (images) {
-	  		if (images.sourceRequirements) {
-	  			var requirements = images.sourceRequirements;
-	  			delete images.sourceRequirements;
+			if (images) {
+				if (images.sourceRequirements) {
+					var requirements = images.sourceRequirements;
+					delete images.sourceRequirements;
 
-			  	gm(appDir + "/" + source).size(Meteor.bindEnvironment(function (err, size) {
-					  if (!err){
-					  	if (size.width != requirements.width || size.height != requirements.height)
-					    	compileStep.error({message: "Asset builder: Source image needs to be " + requirements.height + "x" + requirements.width + " for type " + name});
-					  } else {
-					  	compileStep.error({message: "Asset builder: " + err});
-					  }
+					gm(appDir + "/" + source).size(Meteor.bindEnvironment(function (err, size) {
+						if (!err){
+							if (size.width != requirements.width || size.height != requirements.height)
+								compileStep.error({message: "Asset builder: Source image needs to be " + requirements.height + "x" + requirements.width + " for type " + name});
+						} else {
+							compileStep.error({message: "Asset builder: " + err});
+						}
 					}));
-	  		}
+				}
 
-	  		mkdirp(appDir + '/' + output + "/" + type + "/", Meteor.bindEnvironment(function (err) {
-	  			if (err)
+				mkdirp(appDir + '/' + output + "/" + type + "/", Meteor.bindEnvironment(function (err) {
+					if (err)
 						compileStep.error({message: "Asset builder: " + err});
 
-		  		_.each(images, function (options, name) {
-		  			gm(appDir + "/" + source)
+					_.each(images, function (options, name) {
+						gm(appDir + "/" + source)
 							.resize(options.height, options.width)
 							.write(appDir + '/' + output + "/" + type + "/" + name, Meteor.bindEnvironment(function (err) {
-							  if (err)
-							  	compileStep.error({message: "Asset builder: " + err});
+								if (err)
+									compileStep.error({message: "Asset builder: " + err});
 							}));
-		  		});
-	  		}));
-	  	}
-  	});
-  });
+					});
+				}));
+			}
+		});
+	});
 }
 
 Plugin.registerSourceHandler("assets", resizeIcons);
