@@ -82,7 +82,7 @@ Example Assets Config
 ```
 
 * **source** - Relative path to source image .
-* **output** - Relative path of where to store the resized icons (will store in output/type/name).
+* **output** - Relative path of where to store the resized images (will store in output/type/name if using a type).
 * **type** - Array of types to include.
 * **name** - Name of the outputed file. For an array of sources you can use `{{source}}` and it will automatically fill in the source file name here;
 * **height** - Height of the (non-retina) image output.
