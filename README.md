@@ -45,6 +45,12 @@ Example Assets Config
 ### Source Icon
 To use the predefined icon types use a 1024x1024 pixel png file
 
+Example Source Icon
+![example](http://i.imgur.com/Q4JK2uA.jpg)
+
+iOS Generated Icons
+![iosoutput](http://i.imgur.com/QYt68O3.png)
+
 ### TODO
 * [ ] Allow for custom types / resizes
 * [ ] Finish platform sizes
