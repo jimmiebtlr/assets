@@ -28,11 +28,12 @@ If you want to help contribute presets look in `presets.js` for examples :)
 * [x] **Favicons + (iOS/Windows Pin Icons)** - favicon 
 * [x] **iOS** - ios
 * [x] **Android** - android
-* [x] **Mac OS X** - mac
+* [x] **Mac OS X** - mac 
 * [ ] **Windows Phone** - windows-phone
-* [ ] **Windows** - windows-8
-* [ ] **Chrome Extension** - chrome-ext
-* [ ] **Chrome App** - chrome-app
+* [x] **Windows 8.1** - windows-81
+* [x] [**Chrome Homescreen Installed Apps**](https://developer.chrome.com/multidevice/android/installtohomescreen) - chrome-homescreen
+* [x] **Chrome Extension** - chrome-ext
+* [x] **Chrome App** - chrome-app
 * [ ] **Google TV** - google-tv
 * [ ] **Blackberry** - blackberry
 
@@ -41,6 +42,9 @@ If you want to help contribute presets look in `presets.js` for examples :)
 * [ ] **Android** - android-splash
 * [ ] **Windows Phone** - windows-phone-splash
 * [ ] **Blackberry** - blackberry-splash
+
+### Other Platform Assets
+* [x] **Chrome Extension Preview** - chrome-ext-preview
 
 ### Other Posible Features
 * [ ] **Automatic CDN Uploading**
@@ -54,7 +58,7 @@ Example Assets Config
     "appIcons": {
         "source": "private/icon.png",
         "output": "resources/icons/",
-        "type": ["ios", "android", "chrome-ext", "mac"]
+        "type": ["ios", "android", "chromeext", "mac"]
     },
     "webIcons": {
         "source": "private/icon.png",
