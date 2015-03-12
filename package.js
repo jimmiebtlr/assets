@@ -1,7 +1,7 @@
 Package.describe({
   name: 'hybrid:asset-builder',
   summary: 'Resize and optimize images for web, mobile, and desktop (icons/retina/favicons/etc)',
-  version: '0.2.0',
+  version: '0.2.2',
   git: 'https://github.com/meteorhybrid/asset-builder'
 });
 
@@ -9,6 +9,8 @@ Package.registerBuildPlugin({
   name: "buildAssets",
   use: ['underscore@1.0.2', 'meteor'],
   sources: [
+    'presets.js',
+    'asset-builder.js',
     'plugin/build-assets.js'
   ],
   npmDependencies: {
