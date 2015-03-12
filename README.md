@@ -18,8 +18,8 @@ meteor add hybrid:asset-builder
 
 ### Image Optimization
 * [x] **Resizing** 
-* [x] **Retina Images**
-* [x] **Image Compression** 
+* [x] **Retina Images** - Generates a `@2x` and regular version of the image.
+* [x] **Image Quality Adjustment** - Good for lowering the filesize of larger images. 
 
 ### Platform Icons Supported
 * [x] **Favicons + (iOS/Windows Pin Icons)** - favicon 
@@ -82,7 +82,7 @@ Example Assets Config
 ```
 
 * **source** - Relative path to source image .
-* **output** - Relative path of where to store the resized images (will store in output/type/name if using a type).
+* **output** - Relative path of where to save the new images (will store in output/type/name if using a type).
 * **type** - Array of types to include.
 * **name** - Name of the outputed file. For an array of sources you can use `{{source}}` and it will automatically fill in the source file name here;
 * **height** - Height of the (non-retina) image output.
@@ -91,18 +91,15 @@ Example Assets Config
 * **quality** - Adjust the compression level. val ranges from 0 to 100 (best).
 
 ### Rerun Note
-To avoid recreating images every time a file is change during development, asset builer only reruns if `config.assets` changes or any of the source images referenced in it change.
+To avoid recreating images every time a file is changed during development, asset builder only reruns if `config.assets` changes or any of the source images referenced in it change.
 
 ### Source Icon
-To use the predefined icon types use a 1024x1024 pixel png file
+The source image for icon types should be a 1024x1024 `png` file. ([Example Source Icon](http://i.imgur.com/FWZofOo.png))
 
-Example Source Icon
-![example](http://i.imgur.com/FWZofOo.png)
-
-iOS Generated Icons
+iOS generated icons from example
 ![iosoutput](http://i.imgur.com/gPGb4p7.png)
 
-### Favicon Inclusion
+### Favicons
 If using the `favicon` type, include the assets in your `<head>`
 ```html
 <!-- Standard Favicon -->
@@ -128,8 +125,8 @@ If using the `favicon` type, include the assets in your `<head>`
 ![favicons](http://i.imgur.com/Rzrxoz4.png)
 
 ### Mobile Icons 
-If using the `ios` or `android` types add these to your `mobile-config.js`
-*Note: the icon names in `mobile-config.js` are confusing and arn't actually all the icons you need. It's better to use the Xcode asset manager at this point*
+If using the `ios` or `android` types, add them to your `mobile-config.js`
+*Note: the icons in `mobile-config.js` are confusing and aren't actually all the icons you need. It's better to use the Xcode asset manager at this point* [#3153](https://github.com/meteor/meteor/issues/3153) [#3419](https://github.com/meteor/meteor/issues/3419)
 ```
 App.icons({
   // iOS
@@ -150,4 +147,4 @@ App.icons({
 ```
 
 ### Retina Images
-If generating retina images you may want to look into [retina.js](http://imulus.github.io/retinajs/) or use [css pixel ratio media queries](https://css-tricks.com/snippets/css/retina-display-media-query/).
+If generating retina images, you may want to look into [retina.js](http://imulus.github.io/retinajs/) or use [css pixel ratio media queries](https://css-tricks.com/snippets/css/retina-display-media-query/).
