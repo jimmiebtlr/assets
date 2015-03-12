@@ -6,7 +6,7 @@ Package.describe({
 });
 
 Package.registerBuildPlugin({
-  name: "resizeIcons",
+  name: "buildAssets",
   use: ['underscore', 'meteor'],
   sources: [
     'plugin/build-assets.js'
