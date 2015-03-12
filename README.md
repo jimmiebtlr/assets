@@ -94,7 +94,7 @@ Example Assets Config
 To avoid recreating images every time a file is change during development, asset builer only reruns if `config.assets` changes or any of the source images referenced in it change.
 
 ### Source Icon
-To use the predefined icon types use a 1024x1024 pixel png file
+The source image for icon types should be a 1024x1024 `png` file.
 
 Example Source Icon
 ![example](http://i.imgur.com/FWZofOo.png)
