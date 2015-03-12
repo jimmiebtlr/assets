@@ -20,7 +20,7 @@ meteor add hybrid:asset-builder
 * [x] **Favicons + (iOS/Windows Pin)** - favicon 
 * [x] **iOS** - ios
 * [x] **Android** - android
-* [ ] **Mac OS X** - mac
+* [x] **Mac OS X** - mac
 * [ ] **Windows Phone** - windows-phone
 * [ ] **Windows** - windows-8
 * [ ] **Chrome Extension** - chrome-ext
@@ -94,6 +94,5 @@ If using the favicon type include the assets in your `<head>`
 ### TODO
 * [ ] Allow for custom types / resizes
 * [ ] Finish platform sizes
-* [ ] Inline docs
 * [ ] Type checks
 * [ ] Finish documentation
