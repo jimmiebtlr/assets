@@ -3,56 +3,99 @@ var fs = Npm.require('fs-extra'),
     path = Npm.require('path'),
     mkdirp = Npm.require('mkdirp'),
     async = Npm.require('async'),
-    asyncEachObject = Npm.require('async-each-object'),
-    appDir = this.process.env.PWD;
+    asyncEachObject = Npm.require('async-each-object');
 
-
+/**
+ * Asset Builder constructor 
+ * @param {Object} options 
+ *   @property {String} config    the raw asset builder config file
+ *   @property {String} cachePath the path realtive to rootDir to cache the files for diffing
+ *   @property {String} rootDir   the path of the root directory to base relative paths off of
+ */
 AssetBuilder = function (options) {
 
   // Raw copy of the config file.
-  this.configRaw = options.config;
+  this._configRaw = options.config;
 
   // JSON parsed config file
-  this.config = JSON.parse(options.config);
+  this._config = JSON.parse(options.config);
 
   // Location to cache the assets for diffing
-  this.cachePath = options.cachePath;
+  this._cachePath = options.cachePath;
+
+  // Root directory of appliction
+  this._rootDir = options.rootDir;
+}
+
+/**
+ * This is the only public api method. It checks for the config has changed or sources
+ * have changed and runs the build method if they have.
+ */
+AssetBuilder.prototype.run = function () {
+  var self = this;
+  // 
+  self._checkConfigChanges(function (changes) {
+    if (changes) {
+      self._build();
+    } else {
+      self._checkSourceChanges(function (changes) {
+        if (changes) {
+          self._build();
+        }
+      })
+    }
+  });
 }
  
+/**
+ * This method is to give non-build pluggin's a fallback error message
+ * @param  {String} message Error message
+ */
 AssetBuilder.prototype.error = function (message) {
   console.log(message);
 }
 
-AssetBuilder.prototype.checkConfigChanges = function (callback) {
+/**
+ * Checks if the new config is different from the cached config
+ * @param  {Function} callback This method is called after the config diff returns
+ */
+AssetBuilder.prototype._checkConfigChanges = function (callback) {
   var self = this;
-  if (fs.existsSync(path.join(self.cachePath, 'config.assets'))) {
-    fs.readFile(path.join(self.cachePath, 'config.assets'), 'utf8', Meteor.bindEnvironment(function read(err, cachedConfig) {
+  if (fs.existsSync(path.join(self._cachePath, 'config.assets'))) {
+    fs.readFile(path.join(self._cachePath, 'config.assets'), 'utf8', Meteor.bindEnvironment(function read(err, cachedConfig) {
       if (err)
         self.error("Asset builder: " + err);
 
-      callback(cachedConfig != self.config);
-      self.cacheConfig();
+      callback(cachedConfig != self._config);
+      self._cacheConfig();
     }));
   } else {
     // Cache last assets config
-    self.cacheConfig();
+    self._cacheConfig();
     callback(true);
   }
 };
 
-AssetBuilder.prototype.cacheConfig = function () {
+/**
+ * Caches the config for future diffing
+ */
+AssetBuilder.prototype._cacheConfig = function () {
   var self = this;
-  fs.outputFile(path.join(self.cachePath, 'config.assets'), this.config, Meteor.bindEnvironment(function (err) {
+  fs.outputFile(path.join(self._cachePath, 'config.assets'), self._configRaw, Meteor.bindEnvironment(function (err) {
     if (err) 
       self.error("Asset builder: " + err);
   }));
 }
 
-AssetBuilder.prototype.checkSourceChanges = function (callback) {
+/**
+ * Checks if the new source image is different from the cached image
+ * @param  {Function} callback This method is called after the image diff returns
+ */
+AssetBuilder.prototype._checkSourceChanges = function (callback) {
   var combinedSources = [], self = this;
 
   // Get all sources 
-  _.each(self.config, function (options) {
+  _.each(self._config, function (options) {
     if (!_.isArray(options.source)) {
       options.source = [options.source];
     }
@@ -69,24 +112,23 @@ AssetBuilder.prototype.checkSourceChanges = function (callback) {
 
     var sourceFileName = source.replace("/", "|");
 
-    if (fs.existsSync(path.join(self.cachePath, sourceFileName))) {
+    if (fs.existsSync(path.join(self._cachePath, sourceFileName))) {
       
-      gm.compare(path.join(appDir, source), path.join(self.cachePath, sourceFileName), 0.02, Meteor.bindEnvironment(function (err, isEqual, equality, raw, path1, path2) {
+      gm.compare(path.join(self._rootDir, source), path.join(self._cachePath, sourceFileName), 0.02, Meteor.bindEnvironment(function (err, isEqual, equality, raw, path1, path2) {
         if (err)
           self.error("Asset builder: " + err);
         if (isEqual) {
           callback(false);
         } else {
-          self.cacheSource(source, self.cachePath);
+          self._cacheSource(source, self._cachePath);
           callback(true);
         }
       }));
     } else {
       // Cache last assets config
-      self.cacheSource(source, self.cachePath);
+      self._cacheSource(source, self._cachePath);
       callback(true);
     }
-
 
   }, function (err) {
     if (err){
@@ -97,19 +139,29 @@ AssetBuilder.prototype.checkSourceChanges = function (callback) {
   });
 }
 
-AssetBuilder.prototype.cacheSource = function (source) {
+/**
+ * Chache the source image for later diffing
+ * @param  {String} source Path of the image to cache
+ */
+AssetBuilder.prototype._cacheSource = function (source) {
   var self = this;
-  fs.copy(path.join(appDir, source), path.join(self.cachePath, source.replace("/", "|")), Meteor.bindEnvironment(function(err) {
+  fs.copy(path.join(self._rootDir, source), path.join(self._cachePath, source.replace("/", "|")), Meteor.bindEnvironment(function(err) {
     if (err) 
       self.error("Asset builder: " + err);
   }));
 }
 
-AssetBuilder.prototype.build = function () {
+/**
+ * Interprets the config and loops through the config options, sources, presets and
+ * builds the images.
+ * 
+ * TODO: Break this up into smaller methods
+ */
+AssetBuilder.prototype._build = function () {
   var self = this;
 
   // Iterate through each config option
-  async.eachObject(self.config, function (options, configName, callback) {
+  async.eachObject(self._config, function (options, configName, callback) {
     var options = _.extend({
       output: "resources",
       quality: 100
@@ -157,7 +209,7 @@ AssetBuilder.prototype.build = function () {
     
     // Iterate through each source
     async.each(source, function (source, callback){
-      var sourcePath = path.join(appDir,source);
+      var sourcePath = path.join(self._rootDir,source);
 
       // Name 
       if (options.name) {
@@ -193,9 +245,9 @@ AssetBuilder.prototype.build = function () {
 
           // If not custom name space the output dir
           if (type != "custom") {
-            rootOutput = path.join(appDir, output, type)
+            rootOutput = path.join(self._rootDir, output, type)
           } else {
-            rootOutput = path.join(appDir, output)
+            rootOutput = path.join(self._rootDir, output)
           }
 
           // Make the path if it doesn't exist
