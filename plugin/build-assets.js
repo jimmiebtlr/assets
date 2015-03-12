@@ -6,7 +6,17 @@ var fs = Npm.require('fs'),
 
 var types = [];
 
-// iOS Preset
+// Favicon Preset
+types.favicon = [
+  { name: "favicon.png",                              size: 32 },
+  { name: "apple-touch-icon-72x72-precomposed.png",   size: 72 },
+  { name: "apple-touch-icon-120x120-precomposed.png", size: 120 },
+  { name: "apple-touch-icon-152x152-precomposed.png", size: 152 },
+  { name: "pinned.png",                               size: 144 },
+  { name: "favicon-coast.png",                        size: 228 }
+]
+
+// iOS Icons Preset
 types.ios = [
   { name: "sourceRequirements",       size: 1024 },
   { name: "Icon-60.png",              size: 60 },
@@ -31,17 +41,7 @@ types.ios = [
   { name: "iTunesArtwork@2x",         size: 1024 }
 ]
 
-// Favicon Preset
-types.favicon = [
-  { name: "favicon.png",                              size: 32 },
-  { name: "apple-touch-icon-72x72-precomposed.png",   size: 72 },
-  { name: "apple-touch-icon-120x120-precomposed.png", size: 120 },
-  { name: "apple-touch-icon-152x152-precomposed.png", size: 152 },
-  { name: "pinned.png",                               size: 144 },
-  { name: "favicon-coast.png",                        size: 228 }
-]
-
-// Android Preset
+// Android Icons Preset
 types.android = [
   { name:"ic_launcher.png",    size: 72, dir: "drawable-hdmi" },
   { name:"ic_launcher.png",    size: 36, dir: "drawable-ldpi" },
@@ -50,6 +50,25 @@ types.android = [
   { name:"ic_launcher.png",    size: 144, dir: "drawable-xxhdpi" },
   { name:"ic_launcher.png",    size: 192, dir: "drawable-xxxhdpi" },
   { name:"playstore-icon.png", size: 512 }
+]
+
+// Mac OS X Icons Preset
+types.mac = [
+  { name:"Icon_16x16.png",      size: 16 },
+  { name:"Icon_16x16@2x.png",   size: 32 },
+  { name:"Icon_16x16@3x.png",   size: 48 },
+  { name:"Icon_32x32.png",      size: 32 },
+  { name:"Icon_32x32@2x.png",   size: 64 },
+  { name:"Icon_32x32@3x.png",   size: 96 },
+  { name:"Icon_128x128.png",    size: 128 },
+  { name:"Icon_128x128@2x.png", size: 256 },
+  { name:"Icon_128x128@3x.png", size: 384 },
+  { name:"Icon_256x256.png",    size: 256 },
+  { name:"Icon_256x256@2x.png", size: 512 },
+  { name:"Icon_256x256@3x.png", size: 768 },
+  { name:"Icon_512x512.png",    size: 512 },
+  { name:"Icon_512x512@2x.png", size: 1024 },
+  { name:"Icon_512x512@3x.png", size: 1536 }
 ]
 
 /**
