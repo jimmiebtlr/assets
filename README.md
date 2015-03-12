@@ -2,7 +2,7 @@
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/meteorhybrid/platform?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-Resize and optimize assets for web, mobile, and desktop.
+Resize and optimize images for web, mobile, and desktop.
 
 ### Installation
 
@@ -17,7 +17,7 @@ meteor add hybrid:asset-builder
 ```
 
 ### Platform Icons Supported
-* [x] **Favicons + (iOS/Windows Pin)** - favicon 
+* [x] **Favicons + (iOS/Windows Pin Icons)** - favicon 
 * [x] **iOS** - ios
 * [x] **Android** - android
 * [x] **Mac OS X** - mac
@@ -34,6 +34,14 @@ meteor add hybrid:asset-builder
 * [ ] **Windows Phone** - windows-phone-splash
 * [ ] **Blackberry** - blackberry-splash
 
+### Image Optimization
+* [x] **Resizing** 
+* [x] **Retina Images**
+* [x] **Image Compression** 
+
+### Other Posible Features
+* [ ] **CDN Upload Support**
+
 ### Assets Config
 Make a new file in your Meteor app directory called `config.assets`
 
@@ -49,13 +57,41 @@ Example Assets Config
         "source": "private/icon.png",
         "output": "public/assets/images/favicon/",
         "type": ["favicon"]
+    },
+    "webImages": {
+        "source": [
+            "private/image.jpg",
+            "private/image2.jpg"
+        ],
+        "output": "public/assets/images/",
+        "retina": true,
+        "quality": 80
+    },
+    "customNameThumbnail": {
+        "source": [
+            "private/image.jpg"
+        ],
+        "name": "{{source}}-thumb.jpg",
+        "output": "public/assets/images/",
+        "height": 20,
+        "width": 20,
+        "retina": true,
+        "quality": 40
     }
 }
 ```
 
-* **source** - Relative path to source image 
-* **output** - Relative path of where to store the resized icons (will store in output/type/name)
-* **type** - Array of types to include
+* **source** - Relative path to source image .
+* **output** - Relative path of where to store the resized icons (will store in output/type/name).
+* **type** - Array of types to include.
+* **name** - Name of the outputed file. For an array of sources you can use `{{source}}` and it will automatically fill in the source file name here;
+* **height** - Height of the (non-retina) image output.
+* **width** - Width of the (non-retina) image output.
+* **retina** - Include an @2x version of the image (this assumes the sources image is @2x).
+* **quality** - Adjust the compression level. val ranges from 0 to 100 (best).
+
+### Rerun Note
+To avoid recreating images every time a file is change during development, asset builer only reruns if `config.assets` changes or any of the source images referenced in it change.
 
 ### Source Icon
 To use the predefined icon types use a 1024x1024 pixel png file
@@ -67,7 +103,7 @@ iOS Generated Icons
 ![iosoutput](http://i.imgur.com/gPGb4p7.png)
 
 ### Favicon Inclusion
-If using the favicon type include the assets in your `<head>`
+If using the `favicon` type, include the assets in your `<head>`
 ```html
 <!-- Standard Favicon -->
 <link rel="icon" type="image/x-icon" href="/assets/images/favicon/favicon.png" />
@@ -91,8 +127,24 @@ If using the favicon type include the assets in your `<head>`
 
 ![favicons](http://i.imgur.com/Rzrxoz4.png)
 
-### TODO
-* [ ] Allow for custom types / resizes
-* [ ] Finish platform sizes
-* [ ] Type checks
-* [ ] Finish documentation
+### Mobile Icons 
+If using the `ios` or `android` types add these to your `mobile-config.js`
+*Note: the icon names in `mobile-config.js` are confusing and arn't actually all the icons you need. It's better to use the Xcode asset manager at this poing*
+```
+App.icons({
+  // iOS
+  'iphone': 'resources/icons/ios/icon-60.png',
+  'iphone_2x': 'resources/icons/ios/icon-60@2x.png',
+  'iphone_3x': 'resources/icons/ios/icon-60@3x.png'
+  'ipad': 'resources/icons/ios/icon-72.png',
+  'ipad_2x': 'resources/icons/ios/icon-72@2x.png',
+
+  // Android
+  'android_hdpi': 'resources/icons/android/drawable-hdpi/ic_launcher.png',
+  'android_ldpi': 'resources/icons/android/drawable-ldpi/ic_launcher.png',
+  'android_mdpi': 'resources/icons/android/drawable-mdpi/ic_launcher.png',
+  'android_xhdpi': 'resources/icons/android/drawable-xhdpi/ic_launcher.png',
+  'android_xxhdpi': 'resources/icons/android/drawable-xxhdpi/ic_launcher.png',
+  'android_xxxhdpi': 'resources/icons/android/drawable-xxxhdpi/ic_launcher.png',
+});
+```
