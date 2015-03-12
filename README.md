@@ -32,12 +32,22 @@ Example Assets Config
 {
     "appIcons": {
         "source": "private/icon.png",
-        "output": "resources",
+        "output": "resources/icons/",
         "type": ["web-app", "ios", "android", "chrome-extension", "mac"]
     }
 }
 ```
 
+* source - Relative path to source icon 
+* output - Relative path of where to store the resized icons
+* type - Array of types to include
+
+### Source Icon
+To use the predefined icon types use a 1024x1024 pixel png file
+
 ### TODO
 * [ ] Allow for custom types / resizes
 * [ ] Finish platform sizes
+* [ ] Inline docs
+* [ ] Type checks
+* [ ] Finish documentation
