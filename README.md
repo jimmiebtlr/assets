@@ -91,7 +91,7 @@ Example Assets Config
 * **quality** - Adjust the compression level. val ranges from 0 to 100 (best).
 
 ### Rerun Note
-To avoid recreating images every time a file is changed during development, asset builer only reruns if `config.assets` changes or any of the source images referenced in it change.
+To avoid recreating images every time a file is changed during development, asset builder only reruns if `config.assets` changes or any of the source images referenced in it change.
 
 ### Source Icon
 The source image for icon types should be a 1024x1024 `png` file.
