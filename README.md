@@ -40,7 +40,7 @@ meteor add hybrid:asset-builder
 * [ ] **Blackberry** - blackberry-splash
 
 ### Other Posible Features
-* [ ] **CDN Upload Support**
+* [ ] **Automatic CDN Uploading**
 
 ### Assets Config
 Make a new file in your Meteor app directory called `config.assets`
@@ -129,7 +129,7 @@ If using the `favicon` type, include the assets in your `<head>`
 
 ### Mobile Icons 
 If using the `ios` or `android` types add these to your `mobile-config.js`
-*Note: the icon names in `mobile-config.js` are confusing and arn't actually all the icons you need. It's better to use the Xcode asset manager at this poing*
+*Note: the icon names in `mobile-config.js` are confusing and arn't actually all the icons you need. It's better to use the Xcode asset manager at this point*
 ```
 App.icons({
   // iOS
@@ -148,3 +148,6 @@ App.icons({
   'android_xxxhdpi': 'resources/icons/android/drawable-xxxhdpi/ic_launcher.png',
 });
 ```
+
+### Retina Images
+If generating retina images you may want to look into [retina.js](http://imulus.github.io/retinajs/) or use [css pixel ratio media queries](https://css-tricks.com/snippets/css/retina-display-media-query/).
