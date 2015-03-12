@@ -18,8 +18,8 @@ meteor add hybrid:asset-builder
 
 ### Image Optimization
 * [x] **Resizing** 
-* [x] **Retina Images**
-* [x] **Image Compression** 
+* [x] **Retina Images** - Generates a `@2x` and regular version of the image.
+* [x] **Image Quality Adjustment** - Good for lowering filesize of larger images. 
 
 ### Platform Icons Supported
 * [x] **Favicons + (iOS/Windows Pin Icons)** - favicon 
