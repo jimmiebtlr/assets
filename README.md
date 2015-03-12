@@ -15,19 +15,22 @@ meteor add hybrid:asset-builder
 ```
 
 ### Platform Icons Supported
-* [x] **Favicon + (iOS/Windows Pin)** - favicon 
+* [x] **Favicons + (iOS/Windows Pin)** - favicon 
 * [x] **iOS** - ios
 * [ ] **Android** - android
 * [ ] **Mac OS X** - mac
 * [ ] **Windows Phone** - windows-phone
-* [ ] **Windows 8** - windows-8
+* [ ] **Windows** - windows-8
 * [ ] **Chrome Extension** - chrome-ext
 * [ ] **Chrome App** - chrome-app
+* [ ] **Google TV** - google-tv
+* [ ] **Blackberry** - blackberry
 
 ### Platform Splashscreens Supported
 * [ ] **iOS** - ios-splash
 * [ ] **Android** - android-splash
-* [ ] **Windows 8** - windows-8-splash
+* [ ] **Windows Phone** - windows-phone-splash
+* [ ] **Blackberry** - blackberry-splash
 
 ### Assets Config
 Make a new file in your Meteor app directory called `config.assets`

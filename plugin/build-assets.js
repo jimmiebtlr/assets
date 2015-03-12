@@ -1,72 +1,91 @@
 var fs = Npm.require('fs'), 
     gm = Npm.require('gm'),
+    path = Npm.require('path'),
     mkdirp = Npm.require('mkdirp'),
     appDir = this.process.env.PWD;
 
 var types = [];
 
-types.ios = {
-  "sourceRequirements":       { size: 1024 },
-  "Icon-60.png":              { size: 60 },
-  "Icon-60@2x.png":           { size: 120 },
-  "Icon-60@3x.png":           { size: 180 },
-  "Icon-72.png":              { size: 72 },
-  "Icon-72@2x.png":           { size: 144 },
-  "Icon-76.png":              { size: 76 },
-  "Icon-76@2x.png":           { size: 152 },
-  "Icon-76@3x.png":           { size: 228 },
-  "Icon-Small-50.png":        { size: 50 },
-  "Icon-Small-50@2x.png":     { size: 100 },
-  "Icon-Small.png":           { size: 29 },
-  "Icon-Small@2x.png":        { size: 58 },
-  "Icon-Small@3x.png":        { size: 87 },
-  "Icon-Spotlight-40.png":    { size: 40 },
-  "Icon-Spotlight-40@2x.png": { size: 80},
-  "Icon-Spotlight-40@3x.png": { size: 120 },
-  "Icon.png":                 { size: 57 },
-  "Icon@2x.png":              { size: 114 },
-  "iTunesArtwork":            { size: 512 },
-  "iTunesArtwork@2x":         { size: 1024 }
-}
+// iOS Preset
+types.ios = [
+  { name: "sourceRequirements",       size: 1024 },
+  { name: "Icon-60.png",              size: 60 },
+  { name: "Icon-60@2x.png",           size: 120 },
+  { name: "Icon-60@3x.png",           size: 180 },
+  { name: "Icon-72.png",              size: 72 },
+  { name: "Icon-72@2x.png",           size: 144 },
+  { name: "Icon-76.png",              size: 76 },
+  { name: "Icon-76@2x.png",           size: 152 },
+  { name: "Icon-76@3x.png",           size: 228 },
+  { name: "Icon-Small-50.png",        size: 50 },
+  { name: "Icon-Small-50@2x.png",     size: 100 },
+  { name: "Icon-Small.png",           size: 29 },
+  { name: "Icon-Small@2x.png",        size: 58 },
+  { name: "Icon-Small@3x.png",        size: 87 },
+  { name: "Icon-Spotlight-40.png",    size: 40 },
+  { name: "Icon-Spotlight-40@2x.png", size: 80},
+  { name: "Icon-Spotlight-40@3x.png", size: 120 },
+  { name: "Icon.png",                 size: 57 },
+  { name: "Icon@2x.png",              size: 114 },
+  { name: "iTunesArtwork",            size: 512 },
+  { name: "iTunesArtwork@2x",         size: 1024 }
+]
 
-types.favicon = {
-  "favicon.png":                              { size: 32 },
-  "apple-touch-icon-72x72-precomposed.png":   { size: 72 },
-  "favicon.png":                              { size: 96 },
-  "apple-touch-icon-120x120-precomposed.png": { size: 120 },
-  "pinned.png":                               { size: 144 },
-  "apple-touch-icon-152x152-precomposed.png": { size: 152 },
-  "favicon-coast.png":                        { size: 228 }
-}
+// Favicon Preset
+types.favicon = [
+  { name: "favicon.png",                              size: 32 },
+  { name: "apple-touch-icon-72x72-precomposed.png",   size: 72 },
+  { name: "apple-touch-icon-120x120-precomposed.png", size: 120 },
+  { name: "apple-touch-icon-152x152-precomposed.png", size: 152 },
+  { name: "pinned.png",                               size: 144 },
+  { name: "favicon-coast.png",                        size: 228 }
+]
 
+// Android Preset
+types.android = [
+  { name:"ic_launcher.png",    size: 72, dir: "drawable-hdmi" },
+  { name:"ic_launcher.png",    size: 36, dir: "drawable-ldpi" },
+  { name:"ic_launcher.png",    size: 48, dir: "drawable-mdpi" },
+  { name:"ic_launcher.png",    size: 96, dir: "drawable-xhdpi" },
+  { name:"ic_launcher.png",    size: 144, dir: "drawable-xxhdpi" },
+  { name:"ic_launcher.png",    size: 192, dir: "drawable-xxxhdpi" },
+  { name:"playstore-icon.png", size: 512 }
+]
 
+/**
+ * Build Assets
+ */
 var buildAssets = function (compileStep) {
   var config = JSON.parse(compileStep.read().toString('utf8'));
 
-  _.each(config, function (options, name) {
+  // Iterate through each config option
+  _.each(config, function (options) {
     var options = _.extend({
       output: "resources"
-    }, options), type, source;
+    }, options), type, source, output;
 
     // Type
     if (typeof options.type === 'undefined') {
-      compileStep.error({message: "Asset builder: No type provided for " + name});
+      compileStep.error({message: "Asset builder: No type provided for " + options.name});
     }
     type = options.type;
 
     // Source
     if (typeof options.source === 'undefined') {
-      compileStep.error({message: "Asset builder: No source provided for " + name});
+      compileStep.error({message: "Asset builder: No source provided for " + options.name});
     }
-    source = options.source;
+    source = path.join(appDir, options.source);
 
     // Output
     output = options.output;
 
+    // Iterate through teach type and generate images
     _.each(type, function (type) {
       var images = types[type];
 
       if (images) {
+
+        // Source requirements
         if (images.sourceRequirements) {
           var requirements = images.sourceRequirements;
           delete images.sourceRequirements;
@@ -76,7 +95,8 @@ var buildAssets = function (compileStep) {
             requirements.width = requirements.height = requirements.size;
           }
 
-          gm(appDir + "/" + source).size(Meteor.bindEnvironment(function (err, size) {
+          // Check the source image size
+          gm(source).size(Meteor.bindEnvironment(function (err, size) {
             if (!err){
               if (size.width != requirements.width || size.height != requirements.height)
                 compileStep.error({message: "Asset builder: Source image needs to be " + requirements.height + "x" + requirements.width + " for type " + name});
@@ -86,23 +106,44 @@ var buildAssets = function (compileStep) {
           }));
         }
 
-        mkdirp(appDir + '/' + output + "/" + type + "/", Meteor.bindEnvironment(function (err) {
+        // Make the path if it doesn't exist
+        mkdirp(path.join(appDir, output, type), Meteor.bindEnvironment(function (err) {
           if (err)
             compileStep.error({message: "Asset builder: " + err});
 
-          _.each(images, function (options, name) {
+          // Resize each image
+          _.each(images, function (options) {
+            var outputDir = "",
+
+            // Resize
+            resize = function (output, options) {
+              gm(source)
+                .resize(options.height, options.width)
+                .write(output, Meteor.bindEnvironment(function (err) {
+                  if (err)
+                    compileStep.error({message: "Asset builder: " + err});
+                }));
+            };
 
             // Square Images
             if (options.size) {
               options.width = options.height = options.size;
             }
 
-            gm(appDir + "/" + source)
-              .resize(options.height, options.width)
-              .write(appDir + '/' + output + "/" + type + "/" + name, Meteor.bindEnvironment(function (err) {
+            // Wrapper Directory
+            if (options.dir) {
+              outputDir = path.join(appDir, output, type, options.dir);
+
+              // Create wrapper div
+              mkdirp(outputDir, Meteor.bindEnvironment(function (err) {
                 if (err)
                   compileStep.error({message: "Asset builder: " + err});
+
+                resize(path.join(outputDir, options.name), options);
               }));
+            } else {
+              resize(path.join(appDir, output, type, options.name), options);
+            }
           });
         }));
       }
