@@ -15,14 +15,15 @@ meteor add hybrid:asset-builder
 ```
 
 ### Platform Icons Supported
-* [ ] Web App
-* [x] iOS
-* [ ] Android
-* [ ] Mac OS X
-* [ ] Windows Phone
-* [ ] Windows 8
-* [ ] Chrome Extension
-* [ ] Chrome App
+* [ ] Web App - web-app
+* [x] iOS - ios
+* [ ] Android - android
+* [ ] Mac OS X - mac
+* [ ] Windows Phone - windows-phone
+* [ ] Windows 8 - windows-8
+* [ ] Chrome Extension - chrome-ext
+* [ ] Chrome App - chrome-app
+* [ ] Favicon - favicon 
 
 ### Assets Config
 Make a new file in your Meteor app directory called `config.assets`
@@ -33,7 +34,7 @@ Example Assets Config
     "appIcons": {
         "source": "private/icon.png",
         "output": "resources/icons/",
-        "type": ["web-app", "ios", "android", "chrome-extension", "mac"]
+        "type": ["web-app", "ios", "android", "chrome-ext", "mac"]
     }
 }
 ```
