@@ -42,7 +42,7 @@ Example Assets Config
     },
     "webIcons": {
         "source": "private/icon.png",
-        "output": "public/assets/images/",
+        "output": "public/assets/images/favicon/",
         "type": ["favicon"]
     }
 }
@@ -65,24 +65,26 @@ iOS Generated Icons
 If using the favicon type include the assets in your `<head>`
 ```html
 <!-- Standard Favicon -->
-<link rel="icon" type="image/x-icon" href="/assets/images/favicon.png" />
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon/favicon.png" />
 
 <!-- For iPhone 4 Retina display: -->
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/favicon/apple-touch-icon-114x114-precomposed.png">
 
 <!-- For iPad: -->
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/favicon/apple-touch-icon-72x72-precomposed.png">
 
 <!-- For iPhone: -->
-<link rel="apple-touch-icon-precomposed" href="/assets/images/apple-touch-icon-57x57-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="/assets/images/favicon/apple-touch-icon-57x57-precomposed.png">
 
 <!-- For Windows 8: -->
-<meta name="msapplication-TileImage" content=“/assets/images/pinned.png”>
+<meta name="msapplication-TileImage" content=“/assets/images/favicon/pinned.png”>
 <meta name="msapplication-TileColor" content="#ef0303”>
 
 <!-- For Opera Coast: -->  
-<link rel="icon" href="/assets/images/favicon-coast.png" sizes="228x228">
+<link rel="icon" href="/assets/images/favicon/favicon-coast.png" sizes="228x228">
 ```
+
+![favicons](http://i.imgur.com/Rzrxoz4.png)
 
 ### TODO
 * [ ] Allow for custom types / resizes
