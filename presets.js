@@ -1,3 +1,14 @@
+/**
+ * Asset Builder Preset Types
+ * --------------------------
+ * Presets are Arrays containing the images to output from the source image
+ * 
+ * @property {String} name              Filename of the exported image
+ * @property {Number} size   (optional) The height and width of the exported image 
+ * @property {Number} height (optional) The height of the exported image
+ * @property {Number} width  (optional) The width of the exported image
+ * @property {Number} dir    (optional) The name of the directory to wrap the image in when exporting
+ */
 Presets = [];
 
 // Favicon Preset
