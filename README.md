@@ -96,7 +96,7 @@ To avoid recreating images every time a file is changed during development, asse
 ### Source Icon
 The source image for icon types should be a 1024x1024 `png` file. ([Example Source Icon](http://i.imgur.com/FWZofOo.png))
 
-iOS Generated Icons from example
+iOS generated icons from example
 ![iosoutput](http://i.imgur.com/gPGb4p7.png)
 
 ### Favicon Inclusion
