@@ -16,6 +16,11 @@ Install Meteor build plugin
 meteor add hybrid:asset-builder
 ```
 
+### Image Optimization
+* [x] **Resizing** 
+* [x] **Retina Images**
+* [x] **Image Compression** 
+
 ### Platform Icons Supported
 * [x] **Favicons + (iOS/Windows Pin Icons)** - favicon 
 * [x] **iOS** - ios
@@ -33,11 +38,6 @@ meteor add hybrid:asset-builder
 * [ ] **Android** - android-splash
 * [ ] **Windows Phone** - windows-phone-splash
 * [ ] **Blackberry** - blackberry-splash
-
-### Image Optimization
-* [x] **Resizing** 
-* [x] **Retina Images**
-* [x] **Image Compression** 
 
 ### Other Posible Features
 * [ ] **CDN Upload Support**
