@@ -25,6 +25,11 @@ meteor add hybrid:asset-builder
 * [ ] **Chrome App** - chrome-app
 * [ ] **Favicon** - favicon 
 
+### Platform Splashscreens Supported
+* [ ] **iOS** - ios-splash
+* [ ] **Android** - android-splash
+* [ ] **Windows 8** - windows-8-splash
+
 ### Assets Config
 Make a new file in your Meteor app directory called `config.assets`
 
@@ -39,18 +44,18 @@ Example Assets Config
 }
 ```
 
-* **source** - Relative path to source icon 
-* **output** - Relative path of where to store the resized icons
+* **source** - Relative path to source image 
+* **output** - Relative path of where to store the resized icons (will store in output/type/name)
 * **type** - Array of types to include
 
 ### Source Icon
 To use the predefined icon types use a 1024x1024 pixel png file
 
 Example Source Icon
-![example](http://i.imgur.com/Q4JK2uA.jpg)
+![example](http://i.imgur.com/FWZofOo.png)
 
 iOS Generated Icons
-![iosoutput](http://i.imgur.com/QYt68O3.png)
+![iosoutput](http://i.imgur.com/gPGb4p7.png)
 
 ### TODO
 * [ ] Allow for custom types / resizes
