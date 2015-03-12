@@ -1,7 +1,7 @@
 Package.describe({
   name: 'hybrid:asset-builder',
   summary: 'Resize and optimize assets for web, mobile, and desktop.',
-  version: '0.1.0',
+  version: '0.1.1',
   git: 'https://github.com/meteorhybrid/asset-builder'
 });
 

@@ -1,5 +1,7 @@
 # Hybrid Asset Builder
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/meteorhybrid/platform?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 Resize and optimize assets for web, mobile, and desktop.
 
 ### Installation
@@ -17,7 +19,7 @@ meteor add hybrid:asset-builder
 ### Platform Icons Supported
 * [x] **Favicons + (iOS/Windows Pin)** - favicon 
 * [x] **iOS** - ios
-* [ ] **Android** - android
+* [x] **Android** - android
 * [ ] **Mac OS X** - mac
 * [ ] **Windows Phone** - windows-phone
 * [ ] **Windows** - windows-8
