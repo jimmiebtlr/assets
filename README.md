@@ -16,6 +16,11 @@ Install Meteor build plugin
 meteor add hybrid:asset-builder
 ```
 
+### Image Optimization
+* [x] **Resizing** 
+* [x] **Retina Images**
+* [x] **Image Compression** 
+
 ### Platform Icons Supported
 * [x] **Favicons + (iOS/Windows Pin Icons)** - favicon 
 * [x] **iOS** - ios
@@ -33,11 +38,6 @@ meteor add hybrid:asset-builder
 * [ ] **Android** - android-splash
 * [ ] **Windows Phone** - windows-phone-splash
 * [ ] **Blackberry** - blackberry-splash
-
-### Image Optimization
-* [x] **Resizing** 
-* [x] **Retina Images**
-* [x] **Image Compression** 
 
 ### Other Posible Features
 * [ ] **CDN Upload Support**
@@ -82,7 +82,7 @@ Example Assets Config
 ```
 
 * **source** - Relative path to source image .
-* **output** - Relative path of where to store the resized icons (will store in output/type/name).
+* **output** - Relative path of where to store the resized images (will store in output/type/name if using a type).
 * **type** - Array of types to include.
 * **name** - Name of the outputed file. For an array of sources you can use `{{source}}` and it will automatically fill in the source file name here;
 * **height** - Height of the (non-retina) image output.
