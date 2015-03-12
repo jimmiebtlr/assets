@@ -129,7 +129,7 @@ If using the `favicon` type, include the assets in your `<head>`
 
 ### Mobile Icons 
 If using the `ios` or `android` types add these to your `mobile-config.js`
-*Note: for `ios` the icon names in `mobile-config.js` are confusing and arn't actually all the icons you need. It's better to use the Xcode asset manager at this point*
+*Note: the icon in `mobile-config.js` are confusing and aren't actually all the icons you need. It's better to use the Xcode asset manager at this point* [#3153](https://github.com/meteor/meteor/issues/3153) [#3419](https://github.com/meteor/meteor/issues/3419)
 ```
 App.icons({
   // iOS
