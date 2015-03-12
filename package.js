@@ -9,7 +9,7 @@ Package.registerBuildPlugin({
   name: "resizeIcons",
   use: ['underscore', 'meteor'],
   sources: [
-    'plugin/resize-icons.js'
+    'plugin/build-assets.js'
   ],
   npmDependencies: {
     "gm": "1.17.0", 

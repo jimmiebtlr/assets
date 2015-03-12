@@ -93,7 +93,7 @@ types.ios = {
 }
 
 
-var resizeIcons = function (compileStep) {
+var buildAssets = function (compileStep) {
   var config = JSON.parse(compileStep.read().toString('utf8'));
 
   _.each(config, function (options, name) {
@@ -152,4 +152,4 @@ var resizeIcons = function (compileStep) {
   });
 }
 
-Plugin.registerSourceHandler("assets", resizeIcons);
+Plugin.registerSourceHandler("assets", buildAssets);
