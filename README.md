@@ -16,6 +16,9 @@ Install Meteor build plugin
 meteor add hybrid:asset-builder
 ```
 
+### Contributing
+If you want to help contribute presets look in `presets.js` for examples :) 
+
 ### Image Optimization
 * [x] **Resizing** 
 * [x] **Retina Images** - Generates a `@2x` and regular version of the image.
@@ -147,7 +150,4 @@ App.icons({
 ```
 
 ### Retina Images
-If generating retina images, you may want to look into [retina.js](http://imulus.github.io/retinajs/) or use [css pixel ratio media queries](https://css-tricks.com/snippets/css/retina-display-media-query/).
-
-### Contributing
-If you want to help contribute presets look in `presets.js` for examples :) 
+If generating retina images, you may want to look into [retina.js](http://imulus.github.io/retinajs/) or use [css pixel ratio media queries](https://css-tricks.com/snippets/css/retina-display-media-query/)
