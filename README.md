@@ -15,7 +15,7 @@ meteor add hybrid:asset-builder
 ```
 
 ### Platform Icons Supported
-* [ ] **Web App** - web-app
+* [x] **Favicon + (iOS/Windows Pin)** - favicon 
 * [x] **iOS** - ios
 * [ ] **Android** - android
 * [ ] **Mac OS X** - mac
@@ -23,7 +23,6 @@ meteor add hybrid:asset-builder
 * [ ] **Windows 8** - windows-8
 * [ ] **Chrome Extension** - chrome-ext
 * [ ] **Chrome App** - chrome-app
-* [ ] **Favicon** - favicon 
 
 ### Platform Splashscreens Supported
 * [ ] **iOS** - ios-splash
@@ -39,7 +38,12 @@ Example Assets Config
     "appIcons": {
         "source": "private/icon.png",
         "output": "resources/icons/",
-        "type": ["web-app", "ios", "android", "chrome-ext", "mac"]
+        "type": ["ios", "android", "chrome-ext", "mac"]
+    },
+    "webIcons": {
+        "source": "private/icon.png",
+        "output": "public/assets/images/",
+        "type": ["favicon"]
     }
 }
 ```
@@ -56,6 +60,29 @@ Example Source Icon
 
 iOS Generated Icons
 ![iosoutput](http://i.imgur.com/gPGb4p7.png)
+
+### Favicon Inclusion
+If using the favicon type include the assets in your `<head>`
+```html
+<!-- Standard Favicon -->
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon.png" />
+
+<!-- For iPhone 4 Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/images/apple-touch-icon-114x114-precomposed.png">
+
+<!-- For iPad: -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/images/apple-touch-icon-72x72-precomposed.png">
+
+<!-- For iPhone: -->
+<link rel="apple-touch-icon-precomposed" href="/assets/images/apple-touch-icon-57x57-precomposed.png">
+
+<!-- For Windows 8: -->
+<meta name="msapplication-TileImage" content=“/assets/images/pinned.png”>
+<meta name="msapplication-TileColor" content="#ef0303”>
+
+<!-- For Opera Coast: -->  
+<link rel="icon" href="/assets/images/favicon-coast.png" sizes="228x228">
+```
 
 ### TODO
 * [ ] Allow for custom types / resizes

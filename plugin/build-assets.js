@@ -6,90 +6,37 @@ var fs = Npm.require('fs'),
 var types = [];
 
 types.ios = {
-  "sourceRequirements": {
-    height: 1024,
-    width: 1024 
-  },
-  "Icon-60.png": {
-    height: 60,
-    width: 60
-  },
-  "Icon-60@2x.png": {
-    height: 120,
-    width: 120
-  },
-  "Icon-60@3x.png": {
-    height: 180,
-    width: 180
-  },
-  "Icon-72.png": {
-    height: 72,
-    width: 72
-  },
-  "Icon-72@2x.png": {
-    height: 144,
-    width: 144
-  },
-  "Icon-76.png": {
-    height: 76,
-    width: 76
-  },
-  "Icon-76@2x.png": {
-    height: 152,
-    width: 152
-  },
-  "Icon-76@3x.png": {
-    height: 228,
-    width: 228
-  },
-  "Icon-Small-50.png": {
-    height: 50,
-    width: 50
-  },
-  "Icon-Small-50@2x.png": {
-    height: 100,
-    width: 100
-  },
-  "Icon-Small.png": {
-    height: 29,
-    width: 29
-  },
-  "Icon-Small@2x.png": {
-    height: 58,
-    width: 58
-  },
-  "Icon-Small@3x.png": {
-    height: 87,
-    width: 87
-  },
-  "Icon-Spotlight-40.png": {
-    height: 40,
-    width: 40
-  },
-  "Icon-Spotlight-40@2x.png": {
-    height: 80,
-    width: 80
-  },
-  "Icon-Spotlight-40@3x.png": {
-    height: 120,
-    width: 120
-  },
-  "Icon.png": {
-    height: 57,
-    width: 57
-  },
-  "Icon@2x.png": {
-    height: 114,
-    width: 114
-  },
-  "iTunesArtwork": {
-    height: 512,
-    width: 512
-  },
-  "iTunesArtwork@2x": {
-    height: 1024,
-    width: 1024
-  }
+  "sourceRequirements":       { size: 1024 },
+  "Icon-60.png":              { size: 60 },
+  "Icon-60@2x.png":           { size: 120 },
+  "Icon-60@3x.png":           { size: 180 },
+  "Icon-72.png":              { size: 72 },
+  "Icon-72@2x.png":           { size: 144 },
+  "Icon-76.png":              { size: 76 },
+  "Icon-76@2x.png":           { size: 152 },
+  "Icon-76@3x.png":           { size: 228 },
+  "Icon-Small-50.png":        { size: 50 },
+  "Icon-Small-50@2x.png":     { size: 100 },
+  "Icon-Small.png":           { size: 29 },
+  "Icon-Small@2x.png":        { size: 58 },
+  "Icon-Small@3x.png":        { size: 87 },
+  "Icon-Spotlight-40.png":    { size: 40 },
+  "Icon-Spotlight-40@2x.png": { size: 80},
+  "Icon-Spotlight-40@3x.png": { size: 120 },
+  "Icon.png":                 { size: 57 },
+  "Icon@2x.png":              { size: 114 },
+  "iTunesArtwork":            { size: 512 },
+  "iTunesArtwork@2x":         { size: 1024 }
+}
+
+types.favicon = {
+  "favicon.png":                              { size: 32 },
+  "apple-touch-icon-72x72-precomposed.png":   { size: 72 },
+  "favicon.png":                              { size: 96 },
+  "apple-touch-icon-120x120-precomposed.png": { size: 120 },
+  "pinned.png":                               { size: 144 },
+  "apple-touch-icon-152x152-precomposed.png": { size: 152 },
+  "favicon-coast.png":                        { size: 228 }
 }
 
 
@@ -124,6 +71,11 @@ var buildAssets = function (compileStep) {
           var requirements = images.sourceRequirements;
           delete images.sourceRequirements;
 
+          // Square Images
+          if (requirements.size) {
+            requirements.width = requirements.height = requirements.size;
+          }
+
           gm(appDir + "/" + source).size(Meteor.bindEnvironment(function (err, size) {
             if (!err){
               if (size.width != requirements.width || size.height != requirements.height)
@@ -139,6 +91,12 @@ var buildAssets = function (compileStep) {
             compileStep.error({message: "Asset builder: " + err});
 
           _.each(images, function (options, name) {
+
+            // Square Images
+            if (options.size) {
+              options.width = options.height = options.size;
+            }
+
             gm(appDir + "/" + source)
               .resize(options.height, options.width)
               .write(appDir + '/' + output + "/" + type + "/" + name, Meteor.bindEnvironment(function (err) {
