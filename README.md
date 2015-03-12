@@ -40,7 +40,7 @@ meteor add hybrid:asset-builder
 * [ ] **Blackberry** - blackberry-splash
 
 ### Other Posible Features
-* [ ] **CDN Upload Support**
+* [ ] **Automatic CDN Uploading**
 
 ### Assets Config
 Make a new file in your Meteor app directory called `config.assets`
