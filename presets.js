@@ -48,13 +48,13 @@ Presets.ios = [
 
 // Android Icons Preset
 Presets.android = [
-  { name:"ic_launcher.png",    size: 72, dir: "drawable-hdmi" },
-  { name:"ic_launcher.png",    size: 36, dir: "drawable-ldpi" },
-  { name:"ic_launcher.png",    size: 48, dir: "drawable-mdpi" },
-  { name:"ic_launcher.png",    size: 96, dir: "drawable-xhdpi" },
+  { name:"ic_launcher.png",    size: 72,  dir: "drawable-hdmi" },
+  { name:"ic_launcher.png",    size: 36,  dir: "drawable-ldpi" },
+  { name:"ic_launcher.png",    size: 48,  dir: "drawable-mdpi" },
+  { name:"ic_launcher.png",    size: 96,  dir: "drawable-xhdpi" },
   { name:"ic_launcher.png",    size: 144, dir: "drawable-xxhdpi" },
   { name:"ic_launcher.png",    size: 192, dir: "drawable-xxxhdpi" },
-  { name:"playstore-icon.png", size: 512 }
+  { name:"playstore-icon.png", size: 512  }
 ];
 
 // Mac OS X Icons Preset
