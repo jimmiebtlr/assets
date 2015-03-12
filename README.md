@@ -15,15 +15,15 @@ meteor add hybrid:asset-builder
 ```
 
 ### Platform Icons Supported
-* [ ] Web App - web-app
-* [x] iOS - ios
-* [ ] Android - android
-* [ ] Mac OS X - mac
-* [ ] Windows Phone - windows-phone
-* [ ] Windows 8 - windows-8
-* [ ] Chrome Extension - chrome-ext
-* [ ] Chrome App - chrome-app
-* [ ] Favicon - favicon 
+* [ ] **Web App** - web-app
+* [x] **iOS** - ios
+* [ ] **Android** - android
+* [ ] **Mac OS X** - mac
+* [ ] **Windows Phone** - windows-phone
+* [ ] **Windows 8** - windows-8
+* [ ] **Chrome Extension** - chrome-ext
+* [ ] **Chrome App** - chrome-app
+* [ ] **Favicon** - favicon 
 
 ### Assets Config
 Make a new file in your Meteor app directory called `config.assets`
@@ -39,9 +39,9 @@ Example Assets Config
 }
 ```
 
-* source - Relative path to source icon 
-* output - Relative path of where to store the resized icons
-* type - Array of types to include
+* **source** - Relative path to source icon 
+* **output** - Relative path of where to store the resized icons
+* **type** - Array of types to include
 
 ### Source Icon
 To use the predefined icon types use a 1024x1024 pixel png file
