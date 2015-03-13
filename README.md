@@ -4,6 +4,8 @@
 
 Resize and optimize images for web, mobile, and desktop.
 
+=========
+
 ### Requirement
 
 First download and install [GraphicsMagick](http://www.graphicsmagick.org/). 
