@@ -33,6 +33,11 @@ For use as a Meteor build plugin use this package
 meteor add hybrid:asset-builder
 ```
 
+* [ ] NPM Module
+* [ ] Grunt Plugin
+* [ ] Gulp Plugin
+* [ ] Brocolli Plugin
+
 ## Features
 
 #### Image Optimization
