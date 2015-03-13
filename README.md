@@ -33,15 +33,14 @@ meteor add hybrid:asset-builder
 ```
 =======
 
-### Contributing
-If you want to help contribute presets look in `presets.js` for examples :) 
+## Features
 
-### Image Optimization
+#### Image Optimization
 * [x] **Resizing** 
 * [x] **Retina Images** - Generates a `@2x` and regular version of the image.
 * [x] **Image Quality Adjustment** - Good for lowering the filesize of larger images. 
 
-### Platform Icons Supported
+#### Platform Icons Supported
 * [x] **Favicons + (iOS/Windows Pin Icons)** - favicon 
 * [x] **iOS** - ios
 * [x] **Android** - android
@@ -54,17 +53,22 @@ If you want to help contribute presets look in `presets.js` for examples :)
 * [ ] **Google TV** - google-tv
 * [ ] **Blackberry** - blackberry
 
-### Platform Splashscreens Supported
+#### Platform Splashscreens Supported
 * [ ] **iOS** - ios-splash
 * [ ] **Android** - android-splash
 * [ ] **Windows Phone** - windows-phone-splash
 * [ ] **Blackberry** - blackberry-splash
 
-### Other Platform Assets
+#### Other Platform Assets
 * [x] **Chrome Extension Preview** - chrome-ext-preview
 
-### Other Posible Features
+#### Other Posible Features
 * [ ] **Automatic CDN Uploading**
+
+### Contributing
+If you want to help contribute presets look in `presets.js` for examples :) 
+
+========
 
 ### Assets Config
 Make a new file in your Meteor app directory called `config.assets`
