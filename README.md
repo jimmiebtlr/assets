@@ -68,9 +68,7 @@ meteor add hybrid:asset-builder
 ### Contributing
 If you want to help contribute presets look in `presets.js` for examples :) 
 
-========
-
-### Assets Config
+## Configuration
 Make a new file in your Meteor app directory called `config.assets`
 
 Example Assets Config
