@@ -2,7 +2,7 @@
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/meteorhybrid/platform?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-Assets aims to take all of the work out of creating image assets for your app. Let Assets generate all of your app cross-platform app icons, splashscreens, favicons, app store preview images, @2x retina images, thumbnails, optimized web images, or even sprites. Now if you want to update your app icon on every platform and web .. it's only one command! Assets build tools watch for changes in your config file and source images and will reprocess the assets on change, completely automating your asset building pipeline.
+Assets aims to take all of the work out of creating image assets for your app. Let Assets generate all of your cross-platform app icons, splashscreens, favicons, app store preview images, @2x retina images, thumbnails, optimized web images, or even sprites. Now if you want to update your app icon on every platform and web .. it's only one command! Assets build tools watch for changes in your config file and source images and will reprocess the assets on change, completely automating your asset building pipeline.
 
 ## Installation
 
