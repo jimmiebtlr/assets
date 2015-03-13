@@ -39,34 +39,34 @@ meteor add hybrid:asset-builder
 ## Features
 
 #### Image Optimization
-* [x] **Resizing** 
-* [x] **Retina Images** - Generates a `@2x` and regular version of the image.
-* [x] **Image Quality Adjustment** - Good for lowering the filesize of larger images. 
+* [x] *Resizing*
+* [x] *Retina Images* - Generates a `@2x` and regular version of the image.
+* [x] *Image Quality Adjustment* - Good for lowering the filesize of larger images. 
 
 #### Platform Icons Supported
-* [x] **Favicons + (iOS/Windows Pin Icons)** - favicon 
-* [x] **iOS** - ios
-* [x] **Android** - android
-* [x] **Mac OS X** - mac 
-* [ ] **Windows Phone** - windows-phone
-* [x] **Windows 8.1** - windows-81
-* [x] [**Chrome Homescreen Installed Apps**](https://developer.chrome.com/multidevice/android/installtohomescreen) - chrome-homescreen
-* [x] **Chrome Extension** - chrome-ext
-* [x] **Chrome App** - chrome-app
-* [ ] **Google TV** - google-tv
-* [ ] **Blackberry** - blackberry
+* [x] *Favicons + (iOS/Windows Pin Icons)* - favicon 
+* [x] *iOS* - ios
+* [x] *Android* - android
+* [x] *Mac OS X* - mac 
+* [ ] *Windows Phone* - windows-phone
+* [x] *Windows 8.1* - windows-81
+* [x] [*Chrome Homescreen Installed Apps*](https://developer.chrome.com/multidevice/android/installtohomescreen) - chrome-homescreen
+* [x] *Chrome Extension* - chrome-ext
+* [x] *Chrome App* - chrome-app
+* [ ] *Google TV* - google-tv
+* [ ] *Blackberry* - blackberry
 
 #### Platform Splashscreens Supported
-* [ ] **iOS** - ios-splash
-* [ ] **Android** - android-splash
-* [ ] **Windows Phone** - windows-phone-splash
-* [ ] **Blackberry** - blackberry-splash
+* [ ] *iOS* - ios-splash
+* [ ] *Android* - android-splash
+* [ ] *Windows Phone* - windows-phone-splash
+* [ ] *Blackberry* - blackberry-splash
 
 #### Other Platform Assets
-* [x] **Chrome Extension Preview** - chrome-ext-preview
+* [x] *Chrome Extension Preview* - chrome-ext-preview
 
 #### Other Posible Features
-* [ ] **Automatic CDN Uploading**
+* [ ] *Automatic CDN Uploading*
 
 ### Contributing
 If you want to help contribute presets look in `presets.js` for examples :) 
