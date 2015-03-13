@@ -5,8 +5,6 @@
 Resize and optimize images for web, mobile, and desktop.
 
 
-=========
-
 ## Installation
 
 #### Requirement
@@ -28,7 +26,7 @@ In Windows
 [Windows Installation Instructions](http://www.graphicsmagick.org/INSTALL-windows.html)
 
 
-#### Build tools
+#### Build Plugins
 
 For use as a Meteor build plugin use this package
 ```
