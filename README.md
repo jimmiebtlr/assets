@@ -155,3 +155,5 @@ App.icons({
 
 ### Retina Images
 If generating retina images, you may want to look into [retina.js](http://imulus.github.io/retinajs/) or use [css pixel ratio media queries](https://css-tricks.com/snippets/css/retina-display-media-query/)
+
+# ![Hybrid](http://i.imgur.com/9prSWuI.png) Asset Builder
