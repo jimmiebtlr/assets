@@ -24,28 +24,6 @@ In Windows
 
 [Windows Installation Instructions](http://www.graphicsmagick.org/INSTALL-windows.html)
 
-#### Assets CLI
-
-To use Assets from the command line, clone the repo and do the following
-
-```
-cd assets
-npm install
-./assets --help
-```
-
-```
-Usage:
-  assets [OPTIONS] [ARGS]
-
-Options:
-  -c, --config FILE      Path to assets config file
-  -r, --root PATH        Root directory of application
-  -s, --cache PATH       Directory to store cache
-  -f, --force            Force build even if cache hasn't changed
-  -h, --help             Display help and usage details
-```
-
 #### Build Plugins
 
 For use as a Meteor build plugin use this package
@@ -140,6 +118,29 @@ Example `config.assets`
 * **width** - Width of the (non-retina) image output.
 * **retina** - Include an @2x version of the image (this assumes the sources image is @2x).
 * **quality** - Adjust the compression level. val ranges from 0 to 100 (best).
+
+## Assets CLI
+
+To use Assets from the command line, clone the repo and do the following
+
+```
+cd assets
+npm install
+./assets --help
+```
+
+```
+Usage:
+  assets [OPTIONS] [ARGS]
+
+Options:
+  -c, --config FILE      Path to assets config file
+  -r, --root PATH        Root directory of application
+  -s, --cache PATH       Directory to store cache
+  -f, --force            Force build even if cache hasn't changed
+  -h, --help             Display help and usage details
+```
+
 
 ### Rerun Note
 To avoid recreating images every time a file is changed during development, asset builder only reruns if `config.assets` changes or any of the source images referenced in it change.
