@@ -35,7 +35,7 @@ TODO: Include docs on how to use manually
 
 For use as a Meteor build plugin use this package
 ```
-meteor add hybrid:asset-builder
+meteor add hybrid:asset
 ```
 
 * [ ] Grunt Plugin

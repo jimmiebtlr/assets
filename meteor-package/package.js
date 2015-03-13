@@ -1,7 +1,7 @@
 Package.describe({
-  name: 'hybrid:asset-builder',
+  name: 'hybrid:assets',
   summary: 'Resize and optimize images for web, mobile, and desktop (icons/retina/favicons/etc)',
-  version: '0.2.2',
+  version: '0.2.3',
   git: 'https://github.com/meteorhybrid/asset-builder'
 });
 
