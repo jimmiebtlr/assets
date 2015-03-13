@@ -55,7 +55,7 @@ cli.main(function (args, options) {
     }
     else {
 
-      // Run the builder with out cache checks
+      // Run the builder without cache checks
       assets.build(function () {
         cli.spinner('Building assets.. done!', true);
       });
