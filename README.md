@@ -2,8 +2,7 @@
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/meteorhybrid/platform?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-Resize and optimize images for web, mobile, and desktop.
-
+Assets aims to take all of the work out of creating image assets for your app. Let Assets generate all of your app cross-platform app icons, splashscreens, favicons, app store preview images, @2x retina images, thumbnails, optimized web images, or even sprites. Now if you want to update your app icon on every platform and web .. it's only one command! 
 
 ## Installation
 
