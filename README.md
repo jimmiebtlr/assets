@@ -6,10 +6,21 @@ Resize and optimize images for web, mobile, and desktop.
 
 ### Installation
 
-First download and install [GraphicsMagick](http://www.graphicsmagick.org/). In Mac OS X, you can simply use [Homebrew](http://mxcl.github.io/homebrew/) and do:
+First download and install [GraphicsMagick](http://www.graphicsmagick.org/). 
+
+In Mac OS X, you can simply use [Homebrew](http://mxcl.github.io/homebrew/) and do:
 ```
 brew install graphicsmagick
 ```
+
+On Ubuntu
+```
+sudo apt-get install graphicsmagick
+```
+
+[Windows Installation Instructions](http://www.graphicsmagick.org/INSTALL-windows.html)
+
+========
 
 For use as a Meteor build plugin use this package
 ```
