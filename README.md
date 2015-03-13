@@ -4,27 +4,48 @@
 
 Resize and optimize images for web, mobile, and desktop.
 
-### Installation
 
-First download and install [GraphicsMagick](http://www.graphicsmagick.org/). In Mac OS X, you can simply use [Homebrew](http://mxcl.github.io/homebrew/) and do:
+## Installation
+
+#### Requirement
+
+First download and install [GraphicsMagick](http://www.graphicsmagick.org/). 
+
+In Mac OS X, you can simply use [Homebrew](http://mxcl.github.io/homebrew/) and do:
 ```
 brew install graphicsmagick
 ```
 
-Install Meteor build plugin
+In Ubuntu
+```
+sudo apt-get install graphicsmagick
+```
+
+In Windows
+
+[Windows Installation Instructions](http://www.graphicsmagick.org/INSTALL-windows.html)
+
+
+#### Build Plugins
+
+For use as a Meteor build plugin use this package
 ```
 meteor add hybrid:asset-builder
 ```
 
-### Contributing
-If you want to help contribute presets look in `presets.js` for examples :) 
+* [ ] NPM Module
+* [ ] Grunt Plugin
+* [ ] Gulp Plugin
+* [ ] Brocolli Plugin
 
-### Image Optimization
+## Features
+
+#### Image Optimization
 * [x] **Resizing** 
 * [x] **Retina Images** - Generates a `@2x` and regular version of the image.
 * [x] **Image Quality Adjustment** - Good for lowering the filesize of larger images. 
 
-### Platform Icons Supported
+#### Platform Icons Supported
 * [x] **Favicons + (iOS/Windows Pin Icons)** - favicon 
 * [x] **iOS** - ios
 * [x] **Android** - android
@@ -37,22 +58,25 @@ If you want to help contribute presets look in `presets.js` for examples :)
 * [ ] **Google TV** - google-tv
 * [ ] **Blackberry** - blackberry
 
-### Platform Splashscreens Supported
+#### Platform Splashscreens Supported
 * [ ] **iOS** - ios-splash
 * [ ] **Android** - android-splash
 * [ ] **Windows Phone** - windows-phone-splash
 * [ ] **Blackberry** - blackberry-splash
 
-### Other Platform Assets
+#### Other Platform Assets
 * [x] **Chrome Extension Preview** - chrome-ext-preview
 
-### Other Posible Features
+#### Other Posible Features
 * [ ] **Automatic CDN Uploading**
 
-### Assets Config
-Make a new file in your Meteor app directory called `config.assets`
+### Contributing
+If you want to help contribute presets look in `presets.js` for examples :) 
 
-Example Assets Config
+## Configuration
+Make a new file in your app directory called `config.assets`
+
+Example `config.assets`
 ```json
 {
     "appIcons": {
@@ -131,7 +155,7 @@ If using the `favicon` type, include the assets in your `<head>`
 
 ![favicons](http://i.imgur.com/Rzrxoz4.png)
 
-### Mobile Icons 
+### Meteor Mobile Config
 If using the `ios` or `android` types, add them to your `mobile-config.js`
 *Note: the icons in `mobile-config.js` are confusing and aren't actually all the icons you need. It's better to use the Xcode asset manager at this point* [#3153](https://github.com/meteor/meteor/issues/3153) [#3419](https://github.com/meteor/meteor/issues/3419)
 ```
