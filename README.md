@@ -71,7 +71,7 @@ If you want to help contribute presets look in `presets.js` for examples :)
 ## Configuration
 Make a new file in your app directory called `config.assets`
 
-Example Assets Config
+Example `config.assets`
 ```json
 {
     "appIcons": {
