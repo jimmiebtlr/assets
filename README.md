@@ -50,13 +50,13 @@ meteor add hybrid:asset-builder
 * [x] Image Quality Adjustment - *Good for lowering the filesize of larger images.*
 
 #### Platform Icons Supported
-* [x] Favicons + (iOS/Windows Pin Icons)* - *favicon*
+* [x] Favicons + (iOS/Windows Pin Icons) - *favicon*
 * [x] iOS - *ios*
 * [x] Android - *android*
 * [x] Mac OS X - *mac* 
 * [ ] Windows Phone - *windows-phone*
 * [x] Windows 8.1 - *windows-81*
-* [x] [Chrome Homescreen Installed Apps*](https://developer.chrome.com/multidevice/android/installtohomescreen) - *chrome-homescreen*
+* [x] [Chrome Homescreen Installed Apps](https://developer.chrome.com/multidevice/android/installtohomescreen) - *chrome-homescreen*
 * [x] Chrome Extension - *chrome-ext*
 * [x] Chrome App - *chrome-app*
 * [ ] Google TV - *google-tv*
