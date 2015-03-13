@@ -13,12 +13,12 @@ In Mac OS X, you can simply use [Homebrew](http://mxcl.github.io/homebrew/) and 
 brew install graphicsmagick
 ```
 
-On Ubuntu
+In Ubuntu
 ```
 sudo apt-get install graphicsmagick
 ```
 
-On Windows
+In Windows
 
 [Windows Installation Instructions](http://www.graphicsmagick.org/INSTALL-windows.html)
 
