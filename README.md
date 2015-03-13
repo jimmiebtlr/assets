@@ -68,7 +68,7 @@ meteor add hybrid:asset
 * [ ] Windows Phone - *windows-phone-splash*
 * [ ] Blackberry - *blackberry-splash*
 
-#### Other Platform Asset Presets
+#### Other Platform Presets
 * [x] Chrome Extension Preview - *chrome-ext-preview*
 
 #### Other Posible Features
