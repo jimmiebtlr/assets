@@ -11,7 +11,7 @@ First download and install [GraphicsMagick](http://www.graphicsmagick.org/). In 
 brew install graphicsmagick
 ```
 
-Install Meteor build plugin
+For use as a Meteor build plugin use this package
 ```
 meteor add hybrid:asset-builder
 ```
@@ -131,7 +131,7 @@ If using the `favicon` type, include the assets in your `<head>`
 
 ![favicons](http://i.imgur.com/Rzrxoz4.png)
 
-### Mobile Icons 
+### Meteor Mobile Config
 If using the `ios` or `android` types, add them to your `mobile-config.js`
 *Note: the icons in `mobile-config.js` are confusing and aren't actually all the icons you need. It's better to use the Xcode asset manager at this point* [#3153](https://github.com/meteor/meteor/issues/3153) [#3419](https://github.com/meteor/meteor/issues/3419)
 ```
