@@ -1,4 +1,4 @@
-# Hybrid Asset Builder
+# ![Hybrid](http://i.imgur.com/jUDMlbO.png) Asset Builder
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/meteorhybrid/platform?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
@@ -155,5 +155,3 @@ App.icons({
 
 ### Retina Images
 If generating retina images, you may want to look into [retina.js](http://imulus.github.io/retinajs/) or use [css pixel ratio media queries](https://css-tricks.com/snippets/css/retina-display-media-query/)
-
-# ![Hybrid](http://i.imgur.com/9prSWuI.png) Asset Builder
