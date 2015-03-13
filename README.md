@@ -21,6 +21,7 @@ sudo apt-get install graphicsmagick
 On Windows
 
 [Windows Installation Instructions](http://www.graphicsmagick.org/INSTALL-windows.html)
+
 ========
 ### Installation
 
