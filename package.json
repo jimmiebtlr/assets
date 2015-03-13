@@ -1,0 +1,34 @@
+{
+  "name": "hybrid-assets",
+  "version": "0.1.5",
+  "description": "Resize and optimize images for web, mobile, and desktop (icons/retina/favicons/etc)",
+  "author": "Andrew Reedy <andrewrreedy@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/meteorhybrid/asset-builder"
+  },
+  "bugs": {
+    "url": "https://github.com/andrewreedy/asset-builder/issues"
+  },
+  "keywords": [
+    "cordova",
+    "phonegap",
+    "icons",
+    "assets",
+    "images",
+    "favicons",
+    "splashscreens",
+    "optimize",
+    "resize"
+  ],
+  "dependencies": {
+    "gm": "1.17.0", 
+    "mkdirp": "0.5.0",
+    "async": "0.9.0",
+    "async-each-object": "0.0.2",
+    "fs-extra": "0.16.5",
+    "underscore": "1.8.2",
+    "cli": "0.6.5"
+  },
+  "engine": "node >= 0.4.1"
+}

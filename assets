@@ -1,0 +1,64 @@
+#!/usr/bin/env node
+
+var cli = require('cli'),
+	Assets = require('./index.js'),
+	fs = require('fs-extra');
+
+/**
+ * Command Line Interface
+ */
+
+// cli module hack to prevent error (#63)
+cli.native.util.print = function(msg) { process.stderr.write(msg) };
+
+// CLI Options
+cli.parse({
+    config: ['c', 'Path to assets config file', 'file'],
+    root:   ['r', 'Root directory of application', 'path'],
+    cache:  ['s', 'Directory to store cache', 'path'],
+    force:  ['f', 'Force build even if cache hasn\'t changed']
+});
+ 
+cli.main(function (args, options) {
+
+  if (!options.config) {
+    console.log("You must provide an assets config file");
+    return false;
+  }
+
+  if (!options.root) {
+    console.log("You must provide a root directory");
+    return false;
+  }
+
+  // Read config file
+  fs.readFile(options.config, 'utf8', function read(err, config) {
+    if (err)
+      console.log(err)
+
+    // New asset builder 
+    var assets = new Assets({
+      config: config,
+      cachePath: options.cache,
+      rootDir: options.root,
+      logging: "verbose"
+    });
+
+    cli.spinner('Building assets..');
+
+    if (!options.force) {
+
+      // Run the builder
+      assets.run(function () {
+        cli.spinner('Building assets.. done!', true);
+      });
+    }
+    else {
+
+      // Run the builder with out cache checks
+      assets.build(function () {
+        cli.spinner('Building assets.. done!', true);
+      });
+    }
+  });
+});

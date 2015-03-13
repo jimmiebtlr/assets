@@ -143,3 +143,5 @@ Presets['chrome-ext-preview'] = [
 
 // Custom Type Handling
 Presets.custom = [{ custom: true }];
+
+module.exports = Presets;
