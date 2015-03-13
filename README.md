@@ -182,27 +182,5 @@ If using the `favicon` type, include the assets in your `<head>`
 
 ![favicons](http://i.imgur.com/Rzrxoz4.png)
 
-### Meteor Mobile Config
-If using the `ios` or `android` types, add them to your `mobile-config.js`
-*Note: the icons in `mobile-config.js` are confusing and aren't actually all the icons you need. It's better to use the Xcode asset manager at this point* [#3153](https://github.com/meteor/meteor/issues/3153) [#3419](https://github.com/meteor/meteor/issues/3419)
-```
-App.icons({
-  // iOS
-  'iphone': 'resources/icons/ios/icon-60.png',
-  'iphone_2x': 'resources/icons/ios/icon-60@2x.png',
-  'iphone_3x': 'resources/icons/ios/icon-60@3x.png'
-  'ipad': 'resources/icons/ios/icon-72.png',
-  'ipad_2x': 'resources/icons/ios/icon-72@2x.png',
-
-  // Android
-  'android_hdpi': 'resources/icons/android/drawable-hdpi/ic_launcher.png',
-  'android_ldpi': 'resources/icons/android/drawable-ldpi/ic_launcher.png',
-  'android_mdpi': 'resources/icons/android/drawable-mdpi/ic_launcher.png',
-  'android_xhdpi': 'resources/icons/android/drawable-xhdpi/ic_launcher.png',
-  'android_xxhdpi': 'resources/icons/android/drawable-xxhdpi/ic_launcher.png',
-  'android_xxxhdpi': 'resources/icons/android/drawable-xxxhdpi/ic_launcher.png',
-});
-```
-
 ### Retina Images
 If generating retina images, you may want to look into [retina.js](http://imulus.github.io/retinajs/) or use [css pixel ratio media queries](https://css-tricks.com/snippets/css/retina-display-media-query/)
