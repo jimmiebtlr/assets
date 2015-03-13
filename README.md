@@ -1,4 +1,4 @@
-# ![Hybrid](http://i.imgur.com/jUDMlbO.png) Asset Builder
+# ![Hybrid](http://i.imgur.com/jUDMlbO.png) Assets
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/meteorhybrid/platform?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
@@ -25,6 +25,27 @@ In Windows
 
 [Windows Installation Instructions](http://www.graphicsmagick.org/INSTALL-windows.html)
 
+#### Assets CLI
+
+To use Assets from the command line, clone the repo and do the following
+
+```
+cd assets
+npm install
+./assets --help
+```
+
+```
+Usage:
+  assets [OPTIONS] [ARGS]
+
+Options:
+  -c, --config FILE      Path to assets config file
+  -r, --root PATH        Root directory of application
+  -s, --cache PATH       Directory to store cache
+  -f, --force            Force build even if cache hasn't changed
+  -h, --help             Display help and usage details
+```
 
 #### Build Plugins
 
@@ -33,7 +54,7 @@ For use as a Meteor build plugin use this package
 meteor add hybrid:asset-builder
 ```
 
-* [ ] NPM Module
+* [x] NPM Module
 * [ ] Grunt Plugin
 * [ ] Gulp Plugin
 * [ ] Brocolli Plugin
