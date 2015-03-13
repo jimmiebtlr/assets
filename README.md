@@ -49,7 +49,7 @@ meteor add hybrid:asset
 * [x] Retina Images - *Generates a `@2x` and regular version of the image.*
 * [x] Image Quality Adjustment - *Good for lowering the filesize of larger images.*
 
-#### Platform Icons Supported
+#### Platform Icons Presets
 * [x] Favicons + (iOS/Windows Pin Icons) - *favicon*
 * [x] iOS - *ios*
 * [x] Android - *android*
@@ -62,13 +62,13 @@ meteor add hybrid:asset
 * [ ] Google TV - *google-tv*
 * [ ] Blackberry - *blackberry*
 
-#### Platform Splashscreens Supported
+#### Platform Splashscreens Presets
 * [ ] iOS - *ios-splash*
 * [ ] Android - *android-splash*
 * [ ] Windows Phone - *windows-phone-splash*
 * [ ] Blackberry - *blackberry-splash*
 
-#### Other Platform Assets
+#### Other Platform Asset Presets
 * [x] Chrome Extension Preview - *chrome-ext-preview*
 
 #### Other Posible Features
