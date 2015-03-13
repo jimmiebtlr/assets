@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 var cli = require('cli'),
-	Assets = require('./index.js'),
-	fs = require('fs-extra');
+    Assets = require('./index.js'),
+    fs = require('fs-extra');
 
 /**
  * Command Line Interface
