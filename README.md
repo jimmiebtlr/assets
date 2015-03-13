@@ -21,7 +21,6 @@ sudo apt-get install graphicsmagick
 On Windows
 
 [Windows Installation Instructions](http://www.graphicsmagick.org/INSTALL-windows.html)
-
 ========
 ### Installation
 
@@ -29,6 +28,7 @@ For use as a Meteor build plugin use this package
 ```
 meteor add hybrid:asset-builder
 ```
+=======
 
 ### Contributing
 If you want to help contribute presets look in `presets.js` for examples :) 
