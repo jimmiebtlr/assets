@@ -24,6 +24,13 @@ In Windows
 
 [Windows Installation Instructions](http://www.graphicsmagick.org/INSTALL-windows.html)
 
+#### NPM Module
+To use manually using require
+```
+npm install hybrid-assets
+```
+TODO: Include docs on how to use manually
+
 #### Build Plugins
 
 For use as a Meteor build plugin use this package
@@ -31,7 +38,6 @@ For use as a Meteor build plugin use this package
 meteor add hybrid:asset-builder
 ```
 
-* [x] NPM Module
 * [ ] Grunt Plugin
 * [ ] Gulp Plugin
 * [ ] Brocolli Plugin
