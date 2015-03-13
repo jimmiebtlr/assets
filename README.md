@@ -32,7 +32,6 @@ For use as a Meteor build plugin use this package
 ```
 meteor add hybrid:asset-builder
 ```
-=======
 
 ## Features
 
