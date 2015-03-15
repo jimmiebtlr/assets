@@ -1,5 +1,5 @@
 /**
- * Asset Builder Preset Types
+ * Assets Preset Types
  * --------------------------
  * Presets are Arrays containing the images to output from the source image
  * 
