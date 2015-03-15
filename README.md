@@ -48,6 +48,7 @@ meteor add hybrid:asset
 * [x] Resizing
 * [x] Retina Images - *Generates a `@2x` and regular version of the image.*
 * [x] Image Quality Adjustment - *Good for lowering the filesize of larger images.*
+* [ ] Sprites
 
 #### Platform Icons Presets
 * [x] Favicons + (iOS/Windows Pin Icons) - *favicon*
