@@ -55,8 +55,7 @@ meteor add hybrid:asset
 * [x] iOS - *ios* - [(platform design notes)](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/AppIcons.html#//apple_ref/doc/uid/TP40006556-CH19-SW1)
 * [x] Android - *android* - [(platform design notes)](http://developer.android.com/design/style/iconography.html)
 * [x] Mac OS X - *mac* - [(platform design notes)](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
-* [ ] Windows Phone - *windows-phone*
-* [x] Windows 8.1 - *windows-81*
+* [x] Windows Universal - *windows*
 * [x] [Chrome Homescreen Installed Apps](https://developer.chrome.com/multidevice/android/installtohomescreen) - *chrome-homescreen*
 * [x] Chrome Extension - *chrome-ext*
 * [x] Chrome App - *chrome-app*
