@@ -60,10 +60,10 @@ meteor add hybrid:asset
 * [x] [Chrome Homescreen Installed Apps](https://developer.chrome.com/multidevice/android/installtohomescreen) - *chrome-homescreen*
 * [x] Chrome Extension - *chrome-ext*
 * [x] Chrome App - *chrome-app*
-* [ ] Google TV - *google-tv*
+* [ ] Android TV - *google-tv*
 * [ ] Blackberry - *blackberry*
 
-#### Platform Splashscreens Presets
+#### Platform Launch Screen Presets
 * [ ] iOS - *ios-splash*
 * [ ] Android - *android-splash*
 * [ ] Windows Phone - *windows-phone-splash*
