@@ -52,7 +52,7 @@ meteor add hybrid:asset
 
 #### Platform Icons Presets
 * [x] Favicons + (iOS/Windows Pin Icons) - *favicon*
-* [x] iOS - *ios*
+* [x] iOS - *ios* - [(platform design notes)](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/AppIcons.html#//apple_ref/doc/uid/TP40006556-CH19-SW1)
 * [x] Android - *android* - [(platform design notes)](http://developer.android.com/design/style/iconography.html)
 * [x] Mac OS X - *mac* 
 * [ ] Windows Phone - *windows-phone*
