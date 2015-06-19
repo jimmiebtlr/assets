@@ -2,9 +2,9 @@
  * Assets Preset Types
  * --------------------------
  * Presets are Arrays containing the images to output from the source image
- * 
+ *
  * @property {String} name              Filename of the exported image
- * @property {Number} size   (optional) The height and width of the exported image 
+ * @property {Number} size   (optional) The height and width of the exported image
  * @property {Number} height (optional) The height of the exported image
  * @property {Number} width  (optional) The width of the exported image
  * @property {Number} dir    (optional) The name of the directory to wrap the image in when exporting
@@ -48,7 +48,7 @@ Presets.ios = [
 
 // Android Icons Preset
 Presets.android = [
-  { name:'ic_launcher.png',    size: 72,  dir: 'drawable-hdmi' },
+  { name:'ic_launcher.png',    size: 72,  dir: 'drawable-hdpi' },
   { name:'ic_launcher.png',    size: 36,  dir: 'drawable-ldpi' },
   { name:'ic_launcher.png',    size: 48,  dir: 'drawable-mdpi' },
   { name:'ic_launcher.png',    size: 96,  dir: 'drawable-xhdpi' },
