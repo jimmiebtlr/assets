@@ -53,7 +53,9 @@ Assets.prototype.run = function (callback) {
               callback();
           });
         } else {
-          callback();
+          if( callback ){
+            callback();
+          }
         }
       })
     }
